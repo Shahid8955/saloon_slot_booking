@@ -1,0 +1,5 @@
+if customer_age < 18:
+    print("You must be 18+ to book a salon service.")
+else:
+    title = "Ms." if customer_gender == "Female" else "Mr."
+    print(f"Welcome, {title} {customer_name}! You can book an appointment.")
