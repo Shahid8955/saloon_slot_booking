@@ -1,0 +1,37 @@
+#1: Variable Declaration & Data Types
+customer_name = input("Enter your name: ")   
+customer_age = int(input("Enter your age: "))  
+customer_gender = input("Enter your gender (Male/Female): ").capitalize()  
+is_vip = input("Are you a VIP customer? (yes/no): ").lower() == "yes"  
+services = ["Haircut", "Manicure", "Facial"]  
+prices = {"Haircut": 20, "Manicure": 15, "Facial": 30}
+
+#2: Conditional Statements
+if customer_age < 18:
+    print("You must be 18+ to book a salon service.")
+else:
+    title = "Ms." if customer_gender == "Female" else "Mr."
+    print(f"Welcome, {title} {customer_name}! You can book an appointment.")
+
+#3: Loop: Display Available Services
+print("Available Salon Services:")
+for service in services:  # Loop through the list
+    print("-", service)
+
+#4: Multiple Service Selection & Price Calculation
+selected_services = input("Enter the services you want to book (separate by commas, e.g., Haircut, Manicure): ").split(",")  # Taking user input for multiple services
+selected_services = [service.strip() for service in selected_services]  # Remove extra spaces
+
+# Calculate total price for selected services
+total_price = 0
+for service in selected_services:
+    if service in prices:
+        total_price += prices[service]  # Add price of each selected service
+    else:
+        print(f"Invalid service: {service}")
+
+print(f"Total price for selected services: ${total_price}")
+
+#5: Stylist Preference & Assignment
+preferred_stylist_gender = input("Do you prefer a Male or Female stylist? ").capitalize()
+print(f"A {preferred_stylist_gender.lower()} stylist has been assigned to you. Enjoy your service!")
